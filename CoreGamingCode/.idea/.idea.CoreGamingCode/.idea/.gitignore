@@ -4,12 +4,10 @@
 
 
 # Rider ignored files
-/.idea.CoreGamingCode.iml
 /contentModel.xml
 /projectSettingsUpdater.xml
 /modules.xml
-
-
+/.idea.CoreGamingCode.iml
 # Editor-based HTTP Client requests
 /httpRequests/
 
