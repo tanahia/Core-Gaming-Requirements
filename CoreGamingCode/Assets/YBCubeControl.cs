@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CubeScript : MonoBehaviour
+public class YBCubeControl : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,6 +11,5 @@ public class CubeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
