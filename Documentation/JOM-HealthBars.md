@@ -2,9 +2,6 @@ Health Bar's
                                          
 health bars in games usually show the players or npc current and full hp in the game minecraft the health bar is shown right above the hotbar in game shown by 10 hearts these hearts show the drop in the players health by having the hearts turn black by halfs when the player takes a bit of damage
 
-![gfwea](file:///C:/Users/omaho/Downloads/Pictures/gfwea.png)
-
-
 under the idea of having the player be able to see the enemy's health bar could be shown by having either a new type of health bar showing above the enemy head with a percentage bar
 this type of health bar would be inconsistent with the players one so in use with the JEI feature the game has and show the same hearts as the enemy's health too 
 
