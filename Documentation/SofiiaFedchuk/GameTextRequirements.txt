@@ -1,0 +1,8 @@
+1. Colour of text: Black;
+2. Font-family: Times New Roman;
+3. Font-size: 20px;
+4. Padding of pop-up window: 5px;
+
+The text should be displayed over white pop-up window with grey border. 
+The display condition is hovering mouse cursor over specific objects in game.
+The pop-up window with text should be displayed at the right corner below the object.
