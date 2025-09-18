@@ -25,4 +25,9 @@ public class TextControlScriot : MonoBehaviour
         }
         m_TextMeshPro.text = text;
     }
+
+    public void SetFontSize(int i)
+    {
+        throw new System.NotImplementedException();
+    }
 }
