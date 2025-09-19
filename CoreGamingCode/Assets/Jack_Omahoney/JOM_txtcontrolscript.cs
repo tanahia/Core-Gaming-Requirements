@@ -12,7 +12,7 @@ public class JOM_txtcontrolscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    
     }
 
     public void SetText(string text)
