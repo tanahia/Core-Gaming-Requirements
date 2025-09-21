@@ -32,6 +32,7 @@ public class JOM_TestTxtScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Transform temp = Instantiate(textGOCloneTemplate);
+            
             //gets the rect transform of the clone
             RectTransform tempRectTransform = temp.GetComponent<RectTransform>();
 
@@ -40,6 +41,7 @@ public class JOM_TestTxtScript : MonoBehaviour
 
             Vector3 targetposition = positions[clonecycle];
 
+            //should be = targetposition but for some reason it isnt working so im doing it manually you can change the values here to move the clones to any place on the screen
             tempRectTransform.position = new Vector3 (15,5,0);
             
             i++;
