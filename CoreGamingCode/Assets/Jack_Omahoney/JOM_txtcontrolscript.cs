@@ -12,15 +12,17 @@ public class JOM_txtcontrolscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
     public void SetText(string text)
     {
-        if(m_TextMeshPro != null)
+        if (m_TextMeshPro == null)
         {
-            m_TextMeshPro = GetComponent<TMPro.TextMeshPro> ();
+            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
         }
         m_TextMeshPro.text = text;
     }
+
+
 }
