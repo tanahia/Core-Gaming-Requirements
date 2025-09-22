@@ -1,21 +1,22 @@
 using UnityEngine;
 
-public class JOM_txtcontrolscript : MonoBehaviour
+public class SF_TextControlScript : MonoBehaviour
 {
     TMPro.TextMeshPro m_TextMeshPro;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
+      m_TextMeshPro=GetComponent<TMPro.TextMeshPro>();
     }
 
     // Update is called once per frame
     void Update()
     {
-    
-    }
 
-    public void SetText(string text)
+        
+    }
+    public void Set_Text(string text)
     {
         if (m_TextMeshPro == null)
         {
@@ -23,6 +24,5 @@ public class JOM_txtcontrolscript : MonoBehaviour
         }
         m_TextMeshPro.text = text;
     }
-
-
 }
+
