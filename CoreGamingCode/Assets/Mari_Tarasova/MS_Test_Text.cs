@@ -6,7 +6,7 @@ public class MS_Test_Text : MonoBehaviour
     // MS_TextControl textControl;
 
     public Transform textGOCloneTemplate;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +26,7 @@ public class MS_Test_Text : MonoBehaviour
             Transform temp = Instantiate(textGOCloneTemplate);
             MS_TextControl textControl = temp.GetComponent<MS_TextControl>();
             textControl.SetText("Clone No. " + i.ToString());
+            textControl.SetColor(new Color(Random.value, Random.value, Random.value));
             i++;
         }
     }

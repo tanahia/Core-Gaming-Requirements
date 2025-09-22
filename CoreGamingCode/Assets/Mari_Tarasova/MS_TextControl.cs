@@ -24,4 +24,15 @@ public class MS_TextControl : MonoBehaviour
         }
         m_TextMeshPro.text = text;
     }
+
+    public void SetColor(Color color)
+    {
+        // write set color method color here
+        if (m_TextMeshPro == null)
+        {
+            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
+        }
+
+        m_TextMeshPro.color = color;
+    }
 }
