@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
-public class JOM_txtcontrolscript : MonoBehaviour
+public class FontScript : MonoBehaviour
 {
     TMPro.TextMeshPro m_TextMeshPro;
+    [SerializeField] string nameOfFont;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,17 +14,16 @@ public class JOM_txtcontrolscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        SetFont();
     }
-
-    public void SetText(string text)
+    public void SetFont()
     {
         if (m_TextMeshPro == null)
         {
             m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
         }
-        m_TextMeshPro.text = text;
+       Font newFont = Resources.Load<Font>(nameOfFont);
+        TMP_FontAsset asset = TMP_FontAsset.CreateFontAsset(newFont);
+        m_TextMeshPro.font = asset;
     }
-
-
 }
