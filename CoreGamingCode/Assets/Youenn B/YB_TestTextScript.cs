@@ -20,7 +20,10 @@ public class YB_TestTextScript : MonoBehaviour
             Transform temp = Instantiate(textGOCloneTemplate);
             YB_TextControlScript myTempText = temp.GetComponent<YB_TextControlScript>();
             myTempText.SetText("clone No." + i.ToString());
+            myTempText.Blink(0f, 1f, 0.5f);
             i++;
         }
+
+
     }
 }
