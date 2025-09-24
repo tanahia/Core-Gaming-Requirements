@@ -13,7 +13,7 @@ public class MS_TextControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SetText(string text)
