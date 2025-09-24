@@ -20,7 +20,8 @@ public class HDS_Test_Text_Script : MonoBehaviour
             Transform temp = Instantiate(textGOCloneTemplate);  
             TextControlScriot myTempText = temp.GetComponent<TextControlScriot>();
             myTempText.SetText("Clone No. " + i.ToString());
-            myTempText.SetFontSize(12);
+            float randomSize = Random.Range(1f, 200f);
+            myTempText.SetFontSize(randomSize);
             i++;
         }
        
