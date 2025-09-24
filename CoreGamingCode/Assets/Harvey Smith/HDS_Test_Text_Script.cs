@@ -6,7 +6,7 @@ public class HDS_Test_Text_Script : MonoBehaviour
     TextControlScriot mytext;
 
     public Transform textGOCloneTemplate;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+   
     void Start()
     {
         //mytext = FindFirstObjectByType<TextControlScriot>();
@@ -20,9 +20,10 @@ public class HDS_Test_Text_Script : MonoBehaviour
             Transform temp = Instantiate(textGOCloneTemplate);  
             TextControlScriot myTempText = temp.GetComponent<TextControlScriot>();
             myTempText.SetText("Clone No. " + i.ToString());
+            float randomSize = Random.Range(1f, 200f);
+            myTempText.SetFontSize(randomSize);
             i++;
         }
-        //mytext.SetText("Score " + i.ToString());
-        //i++;
+       
     }
 }

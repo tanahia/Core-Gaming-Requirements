@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class TextControlScriot : MonoBehaviour
 {
@@ -25,4 +26,16 @@ public class TextControlScriot : MonoBehaviour
         }
         m_TextMeshPro.text = text;
     }
-}
+
+    public void SetFontSize(float i)
+        {
+            if (m_TextMeshPro == null)
+            {
+                m_TextMeshPro = GetComponent<TextMeshPro>();
+            }
+
+            float randomSize = Random.Range(1f, 19f);
+            m_TextMeshPro.fontSize = randomSize;
+        }
+    }
+
