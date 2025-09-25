@@ -35,32 +35,5 @@ public class MAR_TextControl : MonoBehaviour
         m_TextMeshPro.text = text;
     }
 
-    public void SetColor(Color color)
-    {
-        if (m_TextMeshPro == null)
-        {
-            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
-        }
-
-        enableColorTransition = false;  // Stop the transition if changing to static color
-        m_TextMeshPro.color = color;
-    }
-
-    public void StartColorTransition(Color fromColor, Color toColor, float duration)
-    {
-        if (m_TextMeshPro == null)
-        {
-            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
-        }
-
-        startColor = fromColor;
-        endColor = toColor;
-        colorTransitionDuration = duration;
-        enableColorTransition = true;
-    }
-
-    public void StopColorTransition()
-    {
-        enableColorTransition = false;
-    }
+    
 }
