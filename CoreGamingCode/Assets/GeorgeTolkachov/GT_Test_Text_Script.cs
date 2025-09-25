@@ -1,13 +1,13 @@
 using UnityEngine;
 using TMPro;
-using System.Collections; // Import TMP namespace
+using System.Collections; // Import IENumerator
 
 public class GT_Test_Text_Script : MonoBehaviour
 {
     private int i = 0;  // To keep track of the clone number
     public Transform textGOCloneTemplate;  // The prefab to clone (TextMeshPro object)
     public float fadeDuration = 2f;        // Duration for fading (seconds)
-    public float verticalOffset = 50f;     // Space between cloned text objects in the Y-axis
+
 
     void Update()
     {
@@ -21,11 +21,6 @@ public class GT_Test_Text_Script : MonoBehaviour
             TMP_Text myTempText = temp.GetComponent<TMP_Text>();
             myTempText.SetText("Clone No. " + i.ToString()); // Set the current value of i in the text
             i++;  // Increment i after setting the text
-
-            // Position the cloned text so it doesn't overlap (stack vertically)
-            Vector3 newPosition = temp.position;
-            newPosition.y += i * verticalOffset;  // Increase the Y position for each clone
-            temp.position = newPosition;
 
             // Set initial alpha to 0 (fully transparent)
             Color initialColor = myTempText.color;
