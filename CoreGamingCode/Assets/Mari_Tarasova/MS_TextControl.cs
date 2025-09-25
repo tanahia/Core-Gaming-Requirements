@@ -15,7 +15,10 @@ public class MS_TextControl : MonoBehaviour
     {
         
     }
-
+/// <summary>
+/// Sets Text of TMPro Component , i.e. must have TMPro component to work 
+/// </summary>
+/// <param name="text">New Text to be displayed</param>
     public void SetText(string text)
     {
         if (m_TextMeshPro == null)
@@ -25,6 +28,10 @@ public class MS_TextControl : MonoBehaviour
         m_TextMeshPro.text = text;
     }
 
+/// <summary>
+/// Changes the color of TMPro Component, i.e. must have TMPro componet to work
+/// </summary>
+/// <param name="color">The color value</param>
     public void SetColor(Color color)
     {
         // write set color method color here
