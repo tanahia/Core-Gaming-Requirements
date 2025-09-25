@@ -47,7 +47,7 @@ public class YB_TextControlScript : MonoBehaviour
       
     }
     /// <summary>
-    /// Causes text to change between the lowest and highest opacity set over a period of time
+    /// Causes text to change between the lowest and highest opacity provided over the chosen period of time
     /// </summary>
     /// <param name="lowOpacity"> most transparent </param>
     /// <param name="highOpacity"> most opaque </param>
