@@ -17,6 +17,7 @@ public class SF_TestTextScript : MonoBehaviour
            Transform temp = Instantiate(textGOCloneTemplate);
            SF_TextControlScript myTempText = temp.GetComponent<SF_TextControlScript>();
            myTempText.Set_Text("Clone No. " + i.ToString());
+            myTempText.SetFont();
            i++;
         }
     }
