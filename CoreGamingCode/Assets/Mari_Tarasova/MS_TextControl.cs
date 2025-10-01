@@ -13,7 +13,7 @@ public class MS_TextControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 /// <summary>
 /// Sets Text of TMPro Component , i.e. must have TMPro component to work 

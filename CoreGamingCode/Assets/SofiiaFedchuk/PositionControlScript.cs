@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class JOM_txtcontrolscript : MonoBehaviour
+public class PositionControlScript : MonoBehaviour
 {
     TMPro.TextMeshPro m_TextMeshPro;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,10 +13,10 @@ public class JOM_txtcontrolscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-    }
 
-    public void SetText(string text)
+
+    }
+    public void Set_Text(string text)
     {
         if (m_TextMeshPro == null)
         {
@@ -35,3 +36,4 @@ public class JOM_txtcontrolscript : MonoBehaviour
         }
     }
 }
+
