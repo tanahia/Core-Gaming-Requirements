@@ -23,7 +23,5 @@ public class YB_TestTextScript : MonoBehaviour
             myTempText.Blink(0f, 1f, 0.5f);
             i++;
         }
-
-
     }
 }
