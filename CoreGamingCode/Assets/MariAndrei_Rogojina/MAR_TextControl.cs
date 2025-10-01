@@ -35,5 +35,14 @@ public class MAR_TextControl : MonoBehaviour
         m_TextMeshPro.text = text;
     }
 
+
+    public void StartColorTransition(Color in_startColor, Color in_endColour, float duration)
+    {
+        colorTransitionDuration = duration;
+        startColor = in_startColor;
+        endColor = in_endColour;
+        enableColorTransition = true;
+
+    }
     
 }
