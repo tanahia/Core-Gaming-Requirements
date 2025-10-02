@@ -17,7 +17,7 @@ public class JOM_txtcontrolscript : MonoBehaviour
 
     public void SetText(string text)
     {
-        if(m_TextMeshPro != null)
+        if(m_TextMeshPro == null)
         {
             m_TextMeshPro = GetComponent<TMPro.TextMeshPro> ();
         }
