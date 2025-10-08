@@ -11,6 +11,7 @@ public class MAR_Test_Text : MonoBehaviour
     void Start()
     {
        // textControl = FindFirstObjectByType<MAR_TextControl>();
+       
     }
 
     // Update is called once per frame

@@ -11,5 +11,6 @@ public class YBCubeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //This has been empty the whole time lol
     }
 }
