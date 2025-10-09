@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8bb63d53926e046962d0bd6bf3d92f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0.5849056, g: 0.42764327, b: 0.42764327, a: 1}
-  endColor: {r: 0.39523363, g: 0.14440194, b: 0.5566038, a: 1}
-  colorTransitionDuration: 3
+  startColor: {r: 1, g: 0, b: 0, a: 1}
+  endColor: {r: 0, g: 1, b: 0.9823983, a: 1}
+  colorTransitionDuration: 5
   enableColorTransition: 1
