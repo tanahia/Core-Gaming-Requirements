@@ -13,7 +13,6 @@ public class YB_TextControlScript : MonoBehaviour
     void Start()
     {
         m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
-
     }
 
     // Update is called once per frame
@@ -33,7 +32,6 @@ public class YB_TextControlScript : MonoBehaviour
                 t = 0;
             }
             m_TextMeshPro.alpha = Mathf.Lerp(m_lowOpacity, m_HighOpacity, t/m_Period);
-
         }
     }
 
