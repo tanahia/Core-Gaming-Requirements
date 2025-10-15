@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using static UnityEditor.U2D.ScriptablePacker;
 
@@ -9,7 +10,7 @@ public class SF_MovementTest : MonoBehaviour
 
 
     float speedMovement = 100.0f;
-    float rotationSpeed = 200.0f;
+    float rotationSpeed = 100.0f;
     float horizontalInput;
     float verticalInput;
     float rotationX;
@@ -32,12 +33,21 @@ public class SF_MovementTest : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         characterTransform.keyboardRotation(horizontalInput, verticalInput, rotationSpeed);
-
-
-        rotationY += Input.GetAxis("Mouse X") * sensitivity;
-        rotationX -= Input.GetAxis("Mouse Y") * sensitivity;
-        cameraHolder.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
-
+       
+       /*     Another way of rotation(more stricter):
+        *     Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
+        if (moveDirection.sqrMagnitude > 0.01f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }*/
+    
+        /*
+        
+         rotationY += Input.GetAxis("Mouse X") * sensitivity;
+         rotationX -= Input.GetAxis("Mouse Y") * sensitivity;
+         cameraHolder.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
+        */
 
         if (Input.GetKey(KeyCode.W))
         {

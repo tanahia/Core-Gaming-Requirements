@@ -51,7 +51,7 @@ public class SF_CharacterMovement : MonoBehaviour
              transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
          }
     }
-    public void mouseRotation(float rotationX, float rotationY)
+  /*  public void mouseRotation(float rotationX, float rotationY)
         
     {
 
@@ -59,5 +59,5 @@ public class SF_CharacterMovement : MonoBehaviour
         transform.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
 
 
-    }
+    }*/
 }
