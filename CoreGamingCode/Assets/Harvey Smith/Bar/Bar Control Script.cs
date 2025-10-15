@@ -12,7 +12,8 @@ public class NewEmptyCSharpScript
        
         TextControl textControl = GetComponent<TextControl>();
        
-        //if (m_slider.value > 80)
+
+       // if (m_slider.value > 80)
         {
             
         }
