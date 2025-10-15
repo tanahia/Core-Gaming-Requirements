@@ -6,8 +6,8 @@ public class GT_CameraControlTPA : MonoBehaviour
 
     public Transform Player;
 
-    float distanceBehind = 4f, distanceUp = 2f;
-
+    float distanceBehind = 6f, distanceUp = 1f;
+    
 
     float theta = 0f, phi = 0f;
 
@@ -22,26 +22,46 @@ public class GT_CameraControlTPA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float scrollV = 0f;
+        float minScroll = 3f, maxScroll = 7.5f;
+        float scrollVel = 0.68f;
 
-      
-     
-        transform.Rotate(Vector3.up, theta,Space.World);
+        Vector2 scroll = Input.mouseScrollDelta;
+        if (scroll.y > 0)
+        {
+            scrollV = distanceBehind - scrollVel;
+            
+            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+        }
+        else if(scroll.y < 0) { 
+            scrollV = distanceBehind + scrollVel;
+            
+            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+        }
+
+            transform.Rotate(Vector3.up, theta, Space.World);
 
         Quaternion rot = transform.rotation;
         transform.Rotate(Vector3.right,  phi);
+
+
         if (angleNotRight())
-            transform.rotation = Quaternion.Slerp(rot, transform.rotation, 0.1f);
+            transform.rotation = rot;   // Quaternion.Slerp(rot, transform.rotation, 0.1f);
 
         transform.position = Player.transform.position - distanceBehind * transform.forward + distanceUp * transform.up;
+       // transform.LookAt(Player.transform.position, Vector3.up);
         Cursor.visible = false;
-        print("theta " + theta);
-        print("phi "+ phi);
+       // print("theta " + theta);
+        //print("phi "+ phi);
 
     }
 
     private bool angleNotRight()
     {
-        return Vector3.Dot(transform.forward, Vector3.forward) < 0.3f;
+        Vector3 v = transform.forward;
+        v.y = 0;
+        v.Normalize();
+        return Vector3.Dot(v, transform.forward) <= 0.9f;
     }
 
     public void lateralRotate(float diff) { 
@@ -51,6 +71,6 @@ public class GT_CameraControlTPA : MonoBehaviour
     public void verticalRotate(float diff) { 
         phi = diff;
 
-        
+        phi = Mathf.Clamp(phi,-45,45);
     }
 }
