@@ -422,6 +422,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonTransformClone: {fileID: 851384932620646820, guid: 916fbd0719aa3fa4bbd39035dfd15918, type: 3}
+  canvasTransform: {fileID: 1843308365}
+  playbuttonSprite: {fileID: 21300000, guid: 38b827a476b388b4789b8b9584ad80b7, type: 3}
+  QuitbuttonSprite: {fileID: 21300000, guid: 847bf40196e43c549a7f4da7dcd71a37, type: 3}
 --- !u!1 &1714404607
 GameObject:
   m_ObjectHideFlags: 0
