@@ -5,6 +5,9 @@ public class YB_CameraControlFPS : MonoBehaviour
     float horzRotation, vertRotation;
 
     public Transform myChar;
+    private float minAngle = -80;
+    private float maxAngle = 80;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,23 +17,18 @@ public class YB_CameraControlFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
         transform.position = myChar.position;
-
-        transform.Rotate(Vector3.up, horzRotation);
-        transform.Rotate(Vector3.right, vertRotation);
-
+        transform.rotation = Quaternion.Euler(vertRotation, horzRotation, 0f);
     }
 
     public void RotateHorizontal(float diff)
     {
-        horzRotation = diff;
+        horzRotation += diff;
     }
 
     public void RotateVertical(float diff) 
     { 
-        vertRotation = diff;
+        vertRotation -= diff;
+        vertRotation = Mathf.Clamp(vertRotation, minAngle, maxAngle);
     }
 }
-//When camera moves it also rotates in an unintended way,
-//it does not remain parallel with the ground
