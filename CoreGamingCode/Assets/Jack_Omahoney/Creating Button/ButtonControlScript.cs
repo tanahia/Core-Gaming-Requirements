@@ -10,10 +10,11 @@ public class ButtonControlScript : MonoBehaviour
     /// Assigns in inspecter or finds automatically
     /// </summary>
     Button btn;
-    TextMeshPro Buttontext;
+    TextMeshProUGUI Buttontext;
     private bool ready;
     RectTransform rectTransform;
     Image img;
+   
 
     /// <summary>
     /// Automatically finds the TextMeshProUGUI component inside button
@@ -22,7 +23,7 @@ public class ButtonControlScript : MonoBehaviour
     {       
         if (btn != null)
         {
-            Buttontext = btn.GetComponentInChildren<TextMeshPro>();
+            Buttontext = btn.GetComponentInChildren<TextMeshProUGUI>();
         }
     }
 
@@ -41,7 +42,7 @@ public class ButtonControlScript : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         if (rectTransform != null)
         {
-            rectTransform.position = position;
+            rectTransform.anchoredPosition = position;
         }
     }
 
@@ -104,7 +105,7 @@ public class ButtonControlScript : MonoBehaviour
     {
         if (btn != null && newSprite != null)
         {
-            img = btn.GetComponent<Image>();
+      
             if (img != null)
             {
                 img.sprite = newSprite;
@@ -115,7 +116,8 @@ public class ButtonControlScript : MonoBehaviour
     internal void Initilise()
     {
         btn = GetComponent<Button>();
-        Buttontext = btn.GetComponentInChildren<TextMeshPro>();
+        Buttontext = btn.GetComponentInChildren<TextMeshProUGUI>();
+        img = btn.GetComponent<Image>();
         ready = true;
 
     }
