@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ButtonControlScript : MonoBehaviour
@@ -112,7 +113,9 @@ public class ButtonControlScript : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// initialises the button by getting the button, text and image components
+    /// </summary>
     internal void Initilise()
     {
         btn = GetComponent<Button>();
@@ -120,5 +123,14 @@ public class ButtonControlScript : MonoBehaviour
         img = btn.GetComponent<Image>();
         ready = true;
 
+    }
+
+    /// <summary>
+    /// sets the action of the button to the UnityAction passed in
+    /// </summary>
+    /// <param name="action"></param>
+    internal void SetButtonAction(UnityAction action)
+    {
+        btn.onClick.AddListener(action);
     }
 }
