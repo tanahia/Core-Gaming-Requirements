@@ -15,7 +15,7 @@ public class MAR_TimerScript : MonoBehaviour
         ----------------- ^ Rename to whatever purpose you want
         cooldown.InitialiseTimer(5f); <--- "5f" is the duration of the timer, you can change it to anything else you want
         cooldown.Start(); 
-        cooldown.PauseTimer(); 
+        cooldown.PauseTimer(); <--- Pauses timer and keeps timer duration, can use get TimeRemaining() to check this
         cooldown.StartTimer();
         cooldown.StopTimer
 
