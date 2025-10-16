@@ -41,7 +41,7 @@ public class SF_CharacterMovement : MonoBehaviour
         transform.position += Vector3.left * Time.deltaTime * speed;
     }
     
-    public void keyboardRotation(Vector2 moveInput,CharacterController characterController, float rotationSpeed)
+    /*public void keyboardRotation(Vector2 moveInput,CharacterController characterController, float rotationSpeed)
     {
         Vector3 movementDirection = new Vector3(moveInput.x, 0, moveInput.y);
         movementDirection.Normalize();
@@ -50,6 +50,16 @@ public class SF_CharacterMovement : MonoBehaviour
              Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
              transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
          }
+    }*/
+    public void keyboardRotation(float horizontalInput, float verticalInput, float rotationSpeed)
+    {
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        movementDirection.Normalize();
+        if (movementDirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+        }
     }
     public void mouseRotation(float rotationX, float rotationY)
         

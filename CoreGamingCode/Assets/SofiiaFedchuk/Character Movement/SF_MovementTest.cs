@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+/*using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -21,7 +21,7 @@ public class SF_MovementTest : MonoBehaviour
     float rotationY;
     float sensitivity = 2.0f;*/
 
-
+/*
     void Start()
     {
         characterTransform = GetComponent<SF_CharacterMovement>();
@@ -57,7 +57,7 @@ public class SF_MovementTest : MonoBehaviour
          cameraHolder.localRotation = Quaternion.Euler(rotationX, rotationY, 0);
         */
 
-
+/*
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -80,14 +80,14 @@ public class SF_MovementTest : MonoBehaviour
 
     }
 
-}
+}*/
 
 /*
  * The code for old input system:
  * 
  * 
  * 
- * using UnityEngine;
+ */ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEditor.U2D.ScriptablePacker;
 
@@ -139,4 +139,4 @@ else if (Input.GetKey(KeyCode.A))
     }
 
 }
- * */
+ /* */
