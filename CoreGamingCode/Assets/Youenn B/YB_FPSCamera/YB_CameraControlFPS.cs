@@ -20,7 +20,7 @@ public class YB_CameraControlFPS : MonoBehaviour
         transform.position = myChar.position;
         transform.rotation = Quaternion.Euler(vertRotation, horzRotation, 0f);
     }
-
+    //CameraControlFPS attaches to the camera and TestFPSCamera goes on the player
 
     /// <summary>
     /// Rotates camera horizontally
