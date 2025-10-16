@@ -28,5 +28,7 @@ public class YB_testfpscam : MonoBehaviour
         {
             fpsCam.SetCameraAngleLimit(camLimitX,camLimitY);
         }
+
+        //CameraControlFPS attaches to the camera and TestFPSCamera goes on the player
     }
 }
