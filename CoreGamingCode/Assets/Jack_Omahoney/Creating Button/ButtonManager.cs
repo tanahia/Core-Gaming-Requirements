@@ -19,7 +19,8 @@ public class ButtonManager : MonoBehaviour
        playButton.SetColors(Color.white, Color.gray, Color.green, Color.black);
        playButton.SetButtonSize(150,50);
        playButton.SetButtonImage(playbuttonSprite);
-        
+       playButton.SetButtonAction(action);
+
        newButton = Instantiate(buttonTransformClone,canvasTransform);
        quitButton = newButton.GetComponent<ButtonControlScript>();
        quitButton.Initilise();
@@ -34,5 +35,12 @@ public class ButtonManager : MonoBehaviour
     void Update()
     {
         
+    }
+    /// <summary>
+    /// This Creates a method that lets the button do something when pressed
+    /// </summary>
+    public void action()
+    {
+        print("Button Pressed");
     }
 }
