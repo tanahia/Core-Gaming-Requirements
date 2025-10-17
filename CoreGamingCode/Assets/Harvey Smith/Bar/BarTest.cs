@@ -14,7 +14,7 @@ public class BarTest : MonoBehaviour
         
         health.SetBarPosition(new Vector2(-200, -200));
         stamina.SetBarPosition(new Vector2(200, -200));
-        health.BarColourChange(90, 50, Color.green, Color.yellow, Color.red);
+        
        stamina.BarColour(Color.blue);
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -32,11 +32,22 @@ public class BarTest : MonoBehaviour
         {
             stamina.IncrementBar(10);
         }
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        health.BarColourChange(90, 50, Color.green, Color.yellow, Color.red);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            health.SetBarValue(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            health.SetBarPosition(new Vector2(30, 30));
+        }
         
     }
 }

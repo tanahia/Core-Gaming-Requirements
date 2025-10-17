@@ -39,7 +39,7 @@ public class HS_BarControl : MonoBehaviour
 
 
     /// <summary>
-    /// This method changes the colour of the bar, to a specified colour at a specified value
+    /// This method changes the colour of the bar, to a specified colour at a specified value,should be in void Update() normally
     /// </summary>
     /// <param name="fullHealth">The value of which the full health colour stops</param>
     /// <param name="middleHealth">The value of which the medium health stops</param>
@@ -97,7 +97,7 @@ public class HS_BarControl : MonoBehaviour
         rectTransform.anchoredPosition = position;
     }
     /// <summary>
-    /// Sets the bars value to a specified value
+    /// Sets the bars value to a specified value, should be in void Update() normally
     /// </summary>
     /// <param name="value">The given value as a double</param>
     public void SetBarValue(double value)
@@ -125,11 +125,5 @@ public class HS_BarControl : MonoBehaviour
         slider.value -= (float)value;
     }
 
-    /*public void BarDrain(double value, double speed)
-    {
 
-        StartCoroutine(slider.value -= (float)value;);
-           
-        
-    }*/
 }
