@@ -6,7 +6,7 @@ public class GT_CameraControlTPA : MonoBehaviour
 
     public Transform Player;
 
-    float distanceBehind = 140f, distanceUp = 30f;
+    float distanceBehind = 150f, distanceUp = 70f;
     
 
     float theta = 0f, phi = 0f;
@@ -23,7 +23,7 @@ public class GT_CameraControlTPA : MonoBehaviour
     void Update()
     {
         float scrollV = 0f;
-        float minScroll = 20f, maxScroll = 20f;
+        float minScroll = 3f, maxScroll = 7.5f;
         float scrollVel = 0.68f;
 
         Vector2 scroll = Input.mouseScrollDelta;
@@ -31,7 +31,7 @@ public class GT_CameraControlTPA : MonoBehaviour
         {
             scrollV = distanceBehind - scrollVel;
             
-            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+            distanceBehind = Mathf.Clamp(scrollV, minScroll, maxScroll);
         }
         else if(scroll.y < 0) { 
             scrollV = distanceBehind + scrollVel;
