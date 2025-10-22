@@ -10,12 +10,19 @@ public class MAR_TimerScript : MonoBehaviour
 
     void Start()
     {
-        //MAR_TimerScript cooldown = transform.gameObject.AddComponent<MAR_TimerScript>();
-        //cooldown.InitialiseTimer(5f);
-        //cooldown.Start();
+        /* TO USE THIS SCRIPT YOU GET COMPONENT USING
+        MAR_TimerScript cooldown = transform.gameObject.AddComponent<MAR_TimerScript>();
+        ----------------- ^ Rename to whatever purpose you want
+        cooldown.InitialiseTimer(5f); <--- "5f" is the duration of the timer, you can change it to anything else you want
+        cooldown.Start(); 
+        cooldown.PauseTimer(); <--- Pauses timer and keeps timer duration, can use get TimeRemaining() to check this
+        cooldown.StartTimer();
+        cooldown.StopTimer
 
-        //if (cooldown.GetTimeRemaining() > 0)
+        if (cooldown.GetTimeRemaining() > 0) */
 
+        // ^ Use above for testing different purposes
+        
 
             StartTimer(); // Start timer
     }
@@ -39,7 +46,6 @@ public class MAR_TimerScript : MonoBehaviour
 
     public void StartTimer()
     {
- 
         m_Running = true;
         m_Paused = false;
     }
