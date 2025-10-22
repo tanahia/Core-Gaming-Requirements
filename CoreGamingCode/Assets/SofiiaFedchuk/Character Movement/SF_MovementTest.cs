@@ -40,6 +40,10 @@ public class SF_MovementTest : MonoBehaviour
             {
             characterTransform.moveLeft(speedMovement);
             }
+        else if(Input.GetKey(KeyCode.F))
+        {
+            characterTransform.turnLeft(rotationSpeed);
+        }
      
 
     }

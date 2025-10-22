@@ -12,7 +12,7 @@ public class GT_Test_CameraTPA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       myCam.lateralRotate(Input.GetAxis("Horizontal"));
-        myCam.verticalRotate(Input.GetAxis("Vertical"));
+       myCam.lateralRotate(Input.GetAxis("Mouse X"));
+        myCam.verticalRotate(Input.GetAxis("Mouse Y"));
     }
 }
