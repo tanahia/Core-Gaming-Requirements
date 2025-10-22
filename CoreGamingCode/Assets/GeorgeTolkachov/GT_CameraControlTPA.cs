@@ -21,7 +21,7 @@ public class GT_CameraControlTPA : MonoBehaviour
     
     public Transform Player;
 
-    float distanceBehind = 6f, distanceUp = 1f;
+    float distanceBehind = 150f, distanceUp = 70f;
     
 
     float theta = 0f, phi = 0f;
@@ -51,12 +51,12 @@ public class GT_CameraControlTPA : MonoBehaviour
         {
             scrollV = distanceBehind - scrollVel;
             
-            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+            distanceBehind = Mathf.Clamp(scrollV, minScroll, maxScroll);
         }
         else if(scroll.y < 0) { 
             scrollV = distanceBehind + scrollVel;
             
-            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+            distanceBehind = Mathf.Clamp(scrollV, minScroll, maxScroll);
         }
 
             transform.Rotate(Vector3.up, theta, Space.World);
