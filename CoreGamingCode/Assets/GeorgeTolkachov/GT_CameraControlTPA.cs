@@ -1,13 +1,15 @@
 /*
     
  ******** READ ME ********
+ *
  *  This script executes code for the camera. To make it work anchor this script to a MainCamera.
  *  Make MainCamera separate object.
  *  
- *  theta and phi are angles values
- *  Distances are assignet by distanceUp and distanceBehind
- *  Min and max zoom assignet by minCamElevation and maxCamElevation
- *
+ *  Attach Capsule or any model that is considered as Player to the camera so that the script will take this model as variable [Player] and could Transform it.
+ *  
+ *  theta and phi are angle values.
+ *  Distances between camera and the Player are assignet by distanceUp and distanceBehind.
+ *  Zoom values are minScroll and maxScroll, the default position of zoom is stored in variable scrollv, the speed of the zooming in or out stored in variable scrollVel.
  *
  *************************
 
@@ -21,12 +23,12 @@ public class GT_CameraControlTPA : MonoBehaviour
     
     public Transform Player;
 
-    float distanceBehind = 150f, distanceUp = 70f;
+    float distanceBehind = 7f, distanceUp = 1.5f;
     
 
     float theta = 0f, phi = 0f;
 
-    float minCamElevation = -10f, maxCamElevation = 80f;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
