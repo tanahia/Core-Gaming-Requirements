@@ -1,12 +1,27 @@
+/*
+    
+ ******** READ ME ********
+ *  This script executes code for the camera. To make it work anchor this script to a MainCamera.
+ *  Make MainCamera separate object.
+ *  
+ *  theta and phi are angles values
+ *  Distances are assignet by distanceUp and distanceBehind
+ *  Min and max zoom assignet by minCamElevation and maxCamElevation
+ *
+ *
+ *************************
+
+*/
+
 using System;
 using UnityEngine;
 
 public class GT_CameraControlTPA : MonoBehaviour
 {
-
+    
     public Transform Player;
 
-    float distanceBehind = 6f, distanceUp = 1f;
+    float distanceBehind = 150f, distanceUp = 70f;
     
 
     float theta = 0f, phi = 0f;
@@ -16,7 +31,12 @@ public class GT_CameraControlTPA : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+       /*
+        GT_CameraControlTPA cameraTp = transform.gameObject.AddComponent<GT_CameraControlTPA>();
+        cameraTp.lateralRotate();
+        cameraTp.verticalRotate();
+        cameraTp.angleNotRight(); 
+       */
     }
 
     // Update is called once per frame
@@ -31,12 +51,12 @@ public class GT_CameraControlTPA : MonoBehaviour
         {
             scrollV = distanceBehind - scrollVel;
             
-            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+            distanceBehind = Mathf.Clamp(scrollV, minScroll, maxScroll);
         }
         else if(scroll.y < 0) { 
             scrollV = distanceBehind + scrollVel;
             
-            distanceBehind = Math.Clamp(scrollV, minScroll, maxScroll);
+            distanceBehind = Mathf.Clamp(scrollV, minScroll, maxScroll);
         }
 
             transform.Rotate(Vector3.up, theta, Space.World);
