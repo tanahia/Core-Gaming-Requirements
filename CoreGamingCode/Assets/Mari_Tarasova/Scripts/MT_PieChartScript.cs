@@ -2,13 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 // TODO: Make validation for methods (at the end)
-// TODO: Make multi-segment support (after all methods for single segment Pie Chart written)
 // TODO: Finish safety component (auto configuration)
-// TODO: ? Method for setting gap between segments
 // TODO: Implement method SetSize()
 // TODO: Implement method InnerRadius()
 // TODO: Implement method QuickSetUp()
 // TODO: Implement method Reset()
+// TODO: Implement SetPosition()
+
+// Testing Feedback:
+// 1. Canvas usagemention (docs)
 
 /// <summary>
 /// This class provides methods to manipulate Pie Chart GameObject. By default, has only 1 segment.
@@ -17,7 +19,7 @@ public class MTPieChart : MonoBehaviour {
     
     private Image _background;
     private Image _segment;
-    
+    bool _variablesInitialised = false;
     [Header("Safety")]
     [Space]
     [Tooltip("Mark to perform vital configuration of GameObject properly to work with this script")]
@@ -25,11 +27,17 @@ public class MTPieChart : MonoBehaviour {
 
     void Start()
     {
+        InitialiseVariables();
+    }
+
+    private void InitialiseVariables()
+    {
         // If you have renamed any image objects under PieChart game object - change Find() arguments to this
         // names, otherwise script won't work.
-        
+
         _background = transform.Find("Background").GetComponent<Image>();
         _segment = transform.Find("Segment").GetComponent<Image>();
+        _variablesInitialised=true;
     }
 
     void Update()
@@ -52,6 +60,11 @@ public class MTPieChart : MonoBehaviour {
     /// <param name="direction">0 for counter-clockwise direction, 1 for clockwise</param>
     public void SetDirection(int direction)
     {
+        if (!_variablesInitialised)
+        {
+            InitialiseVariables();
+        }
+
         switch (direction)
         {
             case 0:
@@ -72,6 +85,10 @@ public class MTPieChart : MonoBehaviour {
     /// <param name="value">fill percentage value from 1 to 100</param>
     public void SetSegmentPercentage(float value)
     {
+        if (!_variablesInitialised)
+        {
+            InitialiseVariables();
+        }
         _segment.fillAmount = value / 100f;
     }
 
@@ -81,6 +98,10 @@ public class MTPieChart : MonoBehaviour {
     /// <param name="value">fill value from 0 to 1</param>
     public void SetSegmentValue(float value)
     {
+        if (!_variablesInitialised)
+        {
+            InitialiseVariables();
+        }
         _segment.fillAmount = value;
     }
 
@@ -102,6 +123,10 @@ public class MTPieChart : MonoBehaviour {
     /// <param name="color">hexadecimal value starting with hash</param>
     public void SetBgColor(string color)
     {
+        if (!_variablesInitialised)
+        {
+            InitialiseVariables();
+        }
         if (ColorUtility.TryParseHtmlString(color, out Color result))
         {
             _background.color = result;
@@ -117,6 +142,10 @@ public class MTPieChart : MonoBehaviour {
     /// <param name="color">hexadecimal value starting with hash</param>
     public void SetSegmentColor(string color)
     {
+        if (!_variablesInitialised)
+        {
+            InitialiseVariables();
+        }
         if (ColorUtility.TryParseHtmlString(color, out Color result))
         {
             _segment.color = result;
