@@ -13,6 +13,7 @@ public class SF_MovementTest : MonoBehaviour
     {
         characterTransform = GetComponent<SF_CharacterMovement>();
 
+
         // characterTransform.SetPosition(new Vector3(0, 15, 0));
         characterTransform.SetPosition(new Vector3(-11, 0, -112));
         characterTransform.setScale(new Vector3(1, 1, 1));     
@@ -20,26 +21,37 @@ public class SF_MovementTest : MonoBehaviour
 
     void Update()
     {
-       horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         characterTransform.keyboardRotation(horizontalInput, verticalInput, rotationSpeed);
-      
-        if (Input.GetKey(KeyCode.W))
-            { 
-            characterTransform.moveForward(speedMovement);
 
-            }
+        if (Input.GetKey(KeyCode.W))
+        {
+            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+
+            //moveForward(speedMovement);
+
+        }
         else if (Input.GetKey(KeyCode.S))
-            {
-             characterTransform.moveBackwards(speedMovement);
-            }
+
+        {
+            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            //  characterTransform.moveBackwards(speedMovement);
+        }
         else if (Input.GetKey(KeyCode.D))
-            {
-            characterTransform.moveRight(speedMovement);
+        {
+            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            // characterTransform.moveRight(speedMovement);
         }
         else if (Input.GetKey(KeyCode.A))
-            {
-            characterTransform.moveLeft(speedMovement);
+        {
+            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            // characterTransform.moveLeft(speedMovement);
+        }
+        else if (Input.GetKey(KeyCode.F))
+        {
+            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            //  characterTransform.turnLeft(rotationSpeed);
 
         }
 
