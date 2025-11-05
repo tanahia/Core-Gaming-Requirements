@@ -63,5 +63,12 @@ public class SF_CharacterMovement : MonoBehaviour
         transform.Rotate(0, randomY, 0);
 
     }
+    public void JustMove(float horizontalInput, float verticalInput, float speed)
+    {
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        transform.position += movementDirection * Time.deltaTime * speed;
+
+    }
+
 
 }
