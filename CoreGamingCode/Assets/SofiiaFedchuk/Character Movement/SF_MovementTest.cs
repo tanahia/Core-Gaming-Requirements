@@ -4,8 +4,8 @@ public class SF_MovementTest : MonoBehaviour
 {
    public SF_CharacterMovement characterTransform;
 
-    float speedMovement = 100.0f;
-    float rotationSpeed = 100.0f;
+    float speedMovement = 10.0f;
+    float rotationSpeed = 1050.0f;
     float horizontalInput;
     float verticalInput;
 
@@ -13,8 +13,10 @@ public class SF_MovementTest : MonoBehaviour
     {
         characterTransform = GetComponent<SF_CharacterMovement>();
 
-        //characterTransform.SetPosition(new Vector3(0, 15, 0));
-        //characterTransform.setScale(new Vector3(5, 5, 5));     
+
+        // characterTransform.SetPosition(new Vector3(0, 15, 0));
+        characterTransform.SetPosition(new Vector3(-11, 0, -112));
+        characterTransform.setScale(new Vector3(1, 1, 1));     
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class SF_MovementTest : MonoBehaviour
 
         }
         else if (Input.GetKey(KeyCode.S))
+
         {
             characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
             //  characterTransform.moveBackwards(speedMovement);
@@ -49,6 +52,7 @@ public class SF_MovementTest : MonoBehaviour
         {
             characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
             //  characterTransform.turnLeft(rotationSpeed);
+
         }
 
     }
