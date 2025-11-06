@@ -12,15 +12,26 @@ public class JOM_txtcontrolscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
     public void SetText(string text)
     {
-        if(m_TextMeshPro == null)
+        if (m_TextMeshPro == null)
         {
-            m_TextMeshPro = GetComponent<TMPro.TextMeshPro> ();
+            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
         }
         m_TextMeshPro.text = text;
+    }
+
+    //this gets the position of the text object and sets it to the position passed in
+    public void SetPosition(Vector3 position)
+    {
+        //gets the rect transform component of the text object
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.position = position;
+        }
     }
 }

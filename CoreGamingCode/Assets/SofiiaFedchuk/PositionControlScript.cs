@@ -1,0 +1,39 @@
+using UnityEngine;
+
+public class PositionControlScript : MonoBehaviour
+{
+    TMPro.TextMeshPro m_TextMeshPro;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
+    }
+    public void Set_Text(string text)
+    {
+        if (m_TextMeshPro == null)
+        {
+            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
+        }
+        m_TextMeshPro.text = text;
+    }
+
+    //this gets the position of the text object and sets it to the position passed in
+    public void SetPosition(Vector3 position)
+    {
+        //gets the rect transform component of the text object
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        if (rectTransform != null)
+        {
+            rectTransform.position = position;
+        }
+    }
+}
+

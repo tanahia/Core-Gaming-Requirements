@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class TextControlScriot : MonoBehaviour
 {
@@ -25,4 +26,20 @@ public class TextControlScriot : MonoBehaviour
         }
         m_TextMeshPro.text = text;
     }
-}
+
+    /// <summary>
+    /// Changes the font size of TMPro Component , i.e. must have TMPro component to work 
+    /// </summary>
+    /// <param name="fontSize">The font size value</param>
+    public void SetFontSize(float fontSize)
+        {
+            if (m_TextMeshPro == null)
+            {
+                m_TextMeshPro = GetComponent<TextMeshPro>();
+            }
+
+            float randomSize = fontSize;
+            m_TextMeshPro.fontSize = randomSize;
+        }
+    }
+
