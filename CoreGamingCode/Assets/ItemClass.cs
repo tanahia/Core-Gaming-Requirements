@@ -5,7 +5,7 @@ public class ItemClass
     public string name;
     public int id;
     private string description;
-    private float weight;
+    internal float weight;
     private float defaultWeight = 1;
 
     public ItemClass(string newName, int newId, string newDescription, float newWeight)
