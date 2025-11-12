@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class JOM_ConsumableItem : JOM_ItemClass
@@ -21,7 +20,7 @@ public class JOM_ConsumableItem : JOM_ItemClass
 
     public void Consume()
     {
-        Debug.Log("You have consumed and gained " + healthBoost + " health.");
+        Debug.Log(" You consume the " + name + " you receive a health boost of " + healthBoost);
     }
 
 

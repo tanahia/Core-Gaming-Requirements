@@ -16,6 +16,6 @@ public class JOM_WeaponClass : JOM_ItemClass
 
     public void Attack()
     {
-        Debug.Log("You attack and deal " + damage + " damage.");
+        Debug.Log("You attack with the " + name + " and do " + damage + " damage");
     }
 }
