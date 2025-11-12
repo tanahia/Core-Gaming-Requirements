@@ -6,6 +6,8 @@ public class HS_TestItemClassScript : MonoBehaviour
     HS_ItemClass hat, rock;
     HS_ConsumableItem potion, drink;
     HS_Weapon sword;
+
+    HS_Inventory inventory;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +16,25 @@ public class HS_TestItemClassScript : MonoBehaviour
         potion = new HS_ConsumableItem("Green Potion", 2, "I really wouldnt!!", 0.2f, -50);
         hat = new HS_ItemClass("Beret", 3, "A simple beret with a green logo", 0.1f);
         drink = new HS_ConsumableItem("Water", 4, 10);
+
+        inventory = new HS_Inventory(20, 150f);
+        if (inventory.AddRequest(rock))
+        {
+            print("Added " + rock.name);
+        }
+        else {
+            print("Could not add");
+        }
+
+        inventory = new HS_Inventory(20, 150f);
+        if (inventory.AddRequest(potion))
+        {
+            print("Added " + potion.name);
+        }
+        else
+        {
+            print("Could not add");
+        }
     }
 
     // Update is called once per frame
