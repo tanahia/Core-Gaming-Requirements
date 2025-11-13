@@ -2,7 +2,7 @@ using UnityEngine;
 public class JOM_ItemClass
 {
     private float defaultWeight = 1;
-    private string name;
+    public string name;
     public int id;
     private string description;
     private float weight;
