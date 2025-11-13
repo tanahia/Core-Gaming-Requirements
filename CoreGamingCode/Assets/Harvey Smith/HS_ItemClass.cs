@@ -5,7 +5,8 @@ public class HS_ItemClass
     public string name;
     public int id;
     private string description;
-    private float weight, defaultWeight = 1;
+    internal float weight;
+    private float defaultWeight = 1;
 
 
     public HS_ItemClass(string newName, int newId, string newDescription, float newWeight)
