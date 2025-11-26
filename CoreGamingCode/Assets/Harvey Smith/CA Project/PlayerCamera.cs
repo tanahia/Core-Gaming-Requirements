@@ -1,20 +1,20 @@
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class TestCameraScript : MonoBehaviour
 {
-    GT_CameraControlTPA playerCam;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GT_CameraControlTPA cam;
+
     void Start()
     {
-        playerCam.GetComponent<GT_CameraControlTPA>();
-
-
-       
+        // Get the camera script on this same camera
+        cam = GetComponent<GT_CameraControlTPA>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+        float mouseY = -Input.GetAxis("Mouse Y") * 2f;
+      
+        cam.verticalRotate(mouseY);
     }
 }
