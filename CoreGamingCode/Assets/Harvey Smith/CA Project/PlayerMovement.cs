@@ -1,21 +1,32 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class TestScript : MonoBehaviour
 {
-    SF_CharacterMovement playerMovement;
-    public Transform playerBox;
-    public float speed = 50;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private SF_CharacterMovement movement;
+    public float movementSpeed = 50f;
+
     void Start()
     {
-        Transform player = Instantiate(playerBox);
-        playerMovement = player.GetComponent<SF_CharacterMovement>();
-        //playerMovement.SetPosition(new Vector3(10, 10, 10));
+        movement = GetComponent<SF_CharacterMovement>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.W))
+            movement.moveForward(movementSpeed);
+
+        if (Input.GetKey(KeyCode.S))
+            movement.moveBackwards(movementSpeed);
+
+        if (Input.GetKey(KeyCode.D))
+            movement.moveRight(movementSpeed);
+
+        if (Input.GetKey(KeyCode.A))
+            movement.moveLeft(movementSpeed);
+
+      
+        float horizontal = Input.GetAxis("Horizontal");
+       float vertical = Input.GetAxis("Vertical");
+        movement.keyboardRotation(horizontal, vertical, 200f);
     }
 }
