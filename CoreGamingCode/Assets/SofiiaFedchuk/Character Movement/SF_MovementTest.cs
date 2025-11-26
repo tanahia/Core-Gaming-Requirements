@@ -4,7 +4,7 @@ public class SF_MovementTest : MonoBehaviour
 {
    public SF_CharacterMovement characterTransform;
 
-    float speedMovement = 10.0f;
+    float speedMovement = 100.0f;
     float rotationSpeed = 1050.0f;
     float horizontalInput;
     float verticalInput;
@@ -15,8 +15,8 @@ public class SF_MovementTest : MonoBehaviour
 
 
         // characterTransform.SetPosition(new Vector3(0, 15, 0));
-        characterTransform.SetPosition(new Vector3(-11, 0, -112));
-        characterTransform.setScale(new Vector3(1, 1, 1));     
+        //characterTransform.SetPosition(new Vector3(-11, 0, -112));
+       // characterTransform.setScale(new Vector3(1, 1, 1));     
     }
 
     void Update()
@@ -27,32 +27,27 @@ public class SF_MovementTest : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            //  characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
 
-            //moveForward(speedMovement);
+            characterTransform.moveForward(speedMovement);
 
         }
         else if (Input.GetKey(KeyCode.S))
 
         {
-            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
-            //  characterTransform.moveBackwards(speedMovement);
+            //characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+             characterTransform.moveBackwards(speedMovement);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
-            // characterTransform.moveRight(speedMovement);
+            // characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            characterTransform.turnRight(rotationSpeed);
+            characterTransform.moveRight(speedMovement);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
-            // characterTransform.moveLeft(speedMovement);
-        }
-        else if (Input.GetKey(KeyCode.F))
-        {
-            characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
-            //  characterTransform.turnLeft(rotationSpeed);
-
+           characterTransform.turnLeft(rotationSpeed);
+            characterTransform.moveLeft(speedMovement);
         }
 
     }
