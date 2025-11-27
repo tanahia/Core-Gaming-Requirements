@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class YB_CameraControlFPS : MonoBehaviour
 {
@@ -8,10 +10,12 @@ public class YB_CameraControlFPS : MonoBehaviour
     private float minAngle = -80;
     private float maxAngle = 80;
 
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -65,4 +69,6 @@ public class YB_CameraControlFPS : MonoBehaviour
         minAngle = setMin;
         maxAngle = setMax;
     }
+
+    
 }
