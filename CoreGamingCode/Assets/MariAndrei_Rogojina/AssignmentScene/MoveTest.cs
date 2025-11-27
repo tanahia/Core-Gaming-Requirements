@@ -14,6 +14,8 @@ public class MoveTest : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown(KeyCode.T))
+            
         
         if (Input.GetKey(KeyCode.W))
             { walk.moveForward(5); }
