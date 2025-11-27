@@ -14,7 +14,7 @@ public class CamTestFPS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         cam.RotateHorizontal(Input.GetAxis("HorizontalM"));
         cam.RotateVertical(Input.GetAxis("VerticalM"));
     }
