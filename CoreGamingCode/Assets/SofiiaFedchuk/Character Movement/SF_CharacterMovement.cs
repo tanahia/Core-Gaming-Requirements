@@ -16,21 +16,21 @@ public class SF_CharacterMovement : MonoBehaviour
     }
     public void moveForward(float speed)
     {
-        transform.position+=Vector3.forward*Time.deltaTime*speed;
+        transform.position+=transform.forward*Time.deltaTime*speed;
         
     }
     public void moveBackwards(float speed)
     {
-        transform.position += Vector3.back * Time.deltaTime * speed;
+        transform.position -= transform.forward * Time.deltaTime * speed;
 
     }
     public void moveRight(float speed)
     {
-        transform.position += Vector3.right * Time.deltaTime * speed;
+        transform.position += transform.right * Time.deltaTime * speed;
     }
     public void moveLeft(float speed)
     {
-        transform.position += Vector3.left * Time.deltaTime * speed;
+        transform.position -= transform.right * Time.deltaTime * speed;
     }
     
 
