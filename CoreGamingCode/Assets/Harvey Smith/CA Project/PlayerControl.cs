@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private physicsMovement movement;
-    float movementSpeed = 10f;
+    float movementSpeed = 3f;
 
 
     void Start()

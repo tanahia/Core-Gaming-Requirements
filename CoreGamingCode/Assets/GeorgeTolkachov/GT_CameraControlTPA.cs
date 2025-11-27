@@ -24,7 +24,7 @@ public class GT_CameraControlTPA : MonoBehaviour
     public Transform Player;
 
     float distanceBehind = 7f, distanceUp = 1.5f;
-    
+    float minScroll = 3f, maxScroll = 7.5f;
 
     float theta = 0f, phi = 0f;
 
@@ -45,7 +45,7 @@ public class GT_CameraControlTPA : MonoBehaviour
     void Update()
     {
         float scrollV = 0f;
-        float minScroll = 3f, maxScroll = 7.5f;
+        
         float scrollVel = 0.68f;
 
         Vector2 scroll = Input.mouseScrollDelta;
@@ -77,7 +77,10 @@ public class GT_CameraControlTPA : MonoBehaviour
         //print("phi "+ phi);
 
     }
-
+    public void setScroll(float minZoom, float maxZoom)
+    {
+        minScroll  = minZoom; maxScroll = maxZoom;
+    }
     private bool angleNotRight()
     {
         Vector3 v = transform.forward;

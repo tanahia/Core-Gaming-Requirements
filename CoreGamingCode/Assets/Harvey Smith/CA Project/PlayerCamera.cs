@@ -3,6 +3,8 @@ using UnityEngine;
 public class TestCameraScript : MonoBehaviour
 {
     private GT_CameraControlTPA cam;
+    float mouseY;
+    float mouseX;
 
     void Start()
     {
@@ -13,8 +15,12 @@ public class TestCameraScript : MonoBehaviour
     void Update()
     {
 
-        float mouseY = -Input.GetAxis("Mouse Y") * 2f;
-      
-        cam.verticalRotate(mouseY);
+       // mouseY = -Input.GetAxis("Mouse Y") * 2f;
+       // cam.verticalRotate(mouseY);
+
+        mouseX = -Input.GetAxis("Mouse X") * 2f;
+        cam.lateralRotate(mouseX);
+
+        cam.setScroll(75, 80);
     }
 }
