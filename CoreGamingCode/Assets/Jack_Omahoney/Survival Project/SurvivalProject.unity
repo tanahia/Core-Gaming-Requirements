@@ -151,7 +151,7 @@ MonoBehaviour:
   objectToSpawn:
   - {fileID: 8924255629581405173, guid: ea928d272ad62af4db9a59e280d51d83, type: 3}
   - {fileID: 9117372950907208361, guid: e8ac8eec7cbe7ca4cac91eab8e6f6feb, type: 3}
-  numberOfObjects: 15
+  numberOfObjects: 20
   rangeX: 15
   rangeZ: 15
   fixedY: 0.5
@@ -559,6 +559,10 @@ PrefabInstance:
     - target: {fileID: 3709673635698979829, guid: 54a52952b91e5164993748771284a9a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771234971681176961, guid: 54a52952b91e5164993748771284a9a3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
