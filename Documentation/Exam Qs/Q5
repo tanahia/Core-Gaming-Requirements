@@ -1,0 +1,57 @@
+
+Contributing to, and managing, a group project can be a challenging problem. Describe workflow of a typical setup for a project on a public Git repository. Please address the following.
+
+•	Initial Setup.
+    •	  Group manager	
+            Assuming we’re working with the Unity project, the group manager creates an empty repo, making sure to include a .gitignore that’s appropriate for unity,
+            and repo is public. Typically the manager would then Clone that repo down on to his local machine, move a Unity project into that folder. 
+            Ensure that the gitignore appropriately placed then would push a project up to the repository. 
+            If the project is ready for contributions from other people the link to the repository will be sent to all involved.
+    •	Contributor 
+          As a contributor you will have received the link to the public repo, while logged into your own personal Git Account ,navigate the shared repo and fork
+          repo which will the copy repository across to your personal account.
+
+•	First Contribution.
+        Once you have a an up to date copy of the group report on your person Git account, you can that repository down onto your local machine, 
+        Where any alterations may be made.  Once work on the project is complete for the given day, all changes can be pushed up to your personal repository. 
+        If you are happy with to submit these for consideration a pull request is created and sent to the group manager.
+
+•	Typical work session.
+        In a typical work session, you will already have a working version of the project on your machine and as such you will not need to clone down the 
+        entire project every time. Is best to only pull down the changes to the group projects that have already been accepted. This can be done locally 
+        and then sent up to your Github account Or pulled to your Github account and then brought down to your local machine. We used the second of these
+        options, where we would choose to sync or Github account, and then fetch all changes and merge them.  At this stage with everything synced work can begin.
+        Once work is finished for the day the same procedure as with the first contribution is used to push your changes up to personal Github account and sending 
+        a pull request to the group manager.
+•	Group Manager Responsibilities
+        Once the initial setup is complete, the managed responsibilities revolve around dealing with pull requests. On receipt of a full request It is the manager’s
+        job to review and determine whether that request will be accepted or not. If it is not to be accepted then a message should be sent detailing the reasons why,
+        outlining what may need to be done for it to be accepted. If it is to be accepted the manager will then attempt to merge it changes with group repository, 
+        this may or may not involve merge conflicts. If there are merge conflicts these need to be resolved before any merging can take place. This can sometimes
+        be done in the repository, but more complicated situations may require new conflicts to be resolved on a local machine.
+
+
+Scrum would be described as an agile framework used to help teams to work together effectively. In the context of contributing to the Group Project this Year, outline the responsibilities that you had and comment on its advantages and disadvantages.
+
+    Whenever there was work to be done, we as a group would decide the functionality, requirements testing regime for each piece of work. 
+    Each student would be given a piece of work and also be assigned a piece of work to test. Typically there was a week allowed to complete the 
+    code with the following week assigned for testing and revisions. These students were encouraged to document either through code comments or a 
+    dedicated read me doc to aid the tester in their work.  
+
+
+(c)	Discuss the ways that game objects can communicate with each other in Unity.
+
+For the purposes of this question, I can consider communication to be method calls. 
+
+There are many ways in which this can be done, but irrespective of the actual mechanism there will be a method and that method will be contained in a given script.
+
+Sometimes that script may be directly available, i.e. it may have been passed as a parameter and cached, or dropped onto a public variable.
+
+More usually the script will need to be found, And there are a variety of ways in which this may be done. 
+
+If you have access to a given game object, be it through a collision or similar mechanism, the script can be found using get component or get component in children method. 
+This can also be done Scripts that implement a given interface.
+
+You can also look for scripts directly, by using a function such as FinfAllObjectsByType which will look for all instances of the script you are looking for.
+
+Finally there are 2. Options that do not involve searching for the script, namely send message and broadcast message.   
