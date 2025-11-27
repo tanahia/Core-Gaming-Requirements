@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar_Script_GT : MonoBehaviour
 {
+       
     private float health = 70f;
     private float targetX = 7f;
     private float speed = 10f;
@@ -17,8 +20,8 @@ public class HealthBar_Script_GT : MonoBehaviour
 
     void Start()
     {
-
-    }
+        
+    }   
 
     void Update()
     {
@@ -69,6 +72,10 @@ public class HealthBar_Script_GT : MonoBehaviour
             health = Mathf.Min(health, 70f);
 
             targetX = (health / 70f) * 7f;
+        }
+
+        if (health == 35f) {
+            
         }
     }
 }
