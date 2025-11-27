@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class JOM_HealthPickup : MonoBehaviour
 {
-    public float healPerSecond = 10f;
+    public float healPerSecond = 5f;
+    public float duration = 3f;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        JOM_PlayerHealth player = other.GetComponent<JOM_PlayerHealth>();
-        if (player != null)
+        JOM_PlayerHealth health = other.GetComponent<JOM_PlayerHealth>();
+        if (health != null)
         {
-            player.Heal(healPerSecond * Time.deltaTime);
+            health.ApplyTimedEffectUsingTimer(healPerSecond, duration);
+            Destroy(gameObject); // pickup disappears
         }
     }
 }

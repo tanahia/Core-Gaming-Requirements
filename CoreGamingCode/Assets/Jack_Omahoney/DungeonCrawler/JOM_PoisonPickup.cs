@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class JOM_PoisonPickup : MonoBehaviour
 {
-    public float damagePerSecond = 10f;
+    public float damagePerSecond = 5f;
+    public float duration = 3f;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        JOM_PlayerHealth player = other.GetComponent<JOM_PlayerHealth>();
-        if (player != null)
+        JOM_PlayerHealth health = other.GetComponent<JOM_PlayerHealth>();
+        if (health != null)
         {
-            player.TakeDamage(damagePerSecond * Time.deltaTime);
+            health.ApplyTimedEffectUsingTimer(-damagePerSecond, duration);
+            Destroy(gameObject); // pickup disappears
         }
     }
 }
