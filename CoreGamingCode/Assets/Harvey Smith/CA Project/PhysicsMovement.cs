@@ -5,24 +5,46 @@ using UnityEngine;
 public class physicsMovement : MonoBehaviour
 {
     public Rigidbody rigid;
-    public float forceAmount = 150f;
+    public Camera cam;
+
 
     public void forwardMovement(float speed)
     {
-        rigid.AddForce(Vector3.forward * speed, ForceMode.Force);
+        Vector3 forwardDir = cam.transform.forward;
 
+        forwardDir.y = 0f;        // keep movement on ground
+        forwardDir.Normalize();   // keep force consistent
+
+        rigid.AddForce(forwardDir * speed, ForceMode.Force);
     }
+
     public void backwardMovement(float speed)
     {
-        rigid.AddForce(Vector3.back * speed, ForceMode.Force);
+        Vector3 backDir = -cam.transform.forward;
 
+        backDir.y = 0f;
+        backDir.Normalize();
+
+        rigid.AddForce(backDir * speed, ForceMode.Force);
     }
+
     public void rightMovement(float speed)
     {
-        rigid.AddForce(Vector3.right * speed, ForceMode.Force);
+        Vector3 rightDir = cam.transform.right;
+
+        rightDir.y = 0f;
+        rightDir.Normalize();
+
+        rigid.AddForce(rightDir * speed, ForceMode.Force);
     }
+
     public void leftMovement(float speed)
     {
-        rigid.AddForce(Vector3.left * speed, ForceMode.Force);
+        Vector3 leftDir = -cam.transform.right;
+
+        leftDir.y = 0f;
+        leftDir.Normalize();
+
+        rigid.AddForce(leftDir * speed, ForceMode.Force);
     }
 }
