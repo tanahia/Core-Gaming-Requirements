@@ -29,7 +29,7 @@ public class SF_PlayerController : MonoBehaviour
         {
             mouseMovement(x, z, speed);
             keyboardMovement(x, z, speed);
-            keyboardRotation(x, z, speed);
+           
 
 
         }
@@ -37,7 +37,7 @@ public class SF_PlayerController : MonoBehaviour
 
         {
             keyboardMovement(x, z, speed);
-            keyboardRotation(x, z, speed);
+           
         }
         else if (Input.GetKey(KeyCode.D))
         {
@@ -64,32 +64,22 @@ public class SF_PlayerController : MonoBehaviour
     public void keyboardRotation(float x, float z, float rotationSpeed)
     {
 
-        Vector3 dir = (transform.right * x + transform.forward * z).normalized;
+         Vector3 dir = (transform.right * x + transform.forward * z).normalized;
 
-        // if there's input, rotate toward it
-        if (dir != Vector3.zero)
-        {
-            Quaternion target = Quaternion.LookRotation(dir, Vector3.up);
+         // if there's input, rotate toward it
+         if (dir.sqrMagnitude > 0.0001f)
+         {
+             Quaternion target = Quaternion.LookRotation(dir, Vector3.up);
 
-            transform.rotation = Quaternion.RotateTowards(
-                transform.rotation,
-                target,
-               rotationSpeed * Time.fixedDeltaTime
-            );
-        }
-        /*  Vector3 moveDirection = new Vector3(x, 0, z);
-          if (moveDirection.sqrMagnitude > 0.01f)
-          {
-              Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-              transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.fixedDeltaTime);
+             transform.rotation = Quaternion.RotateTowards( transform.rotation,target,rotationSpeed * Time.fixedDeltaTime);
+         }
+        
 
-          }*/
     }
     public void keyboardMovement(float x, float z, float speed)
     {
 
         movement = transform.right * x + transform.forward * z;
-        // movement=new Vector3(x, 0, z);
         rb.AddForce(movement.normalized * speed);
     }
 }

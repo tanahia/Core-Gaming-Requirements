@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72ca67b52ac3704fb597b6ae6da48ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SF_PlayerController
-  speed: 500
-  rotationSpeed: 500
+  speed: 100
+  rotationSpeed: 20
   rb: {fileID: 662435138}
 --- !u!54 &662435138
 Rigidbody:
@@ -653,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7050557938060687448, guid: b875a7884ff66374eb1ab0ad387acc0e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.96
       objectReference: {fileID: 0}
     - target: {fileID: 7050557938060687448, guid: b875a7884ff66374eb1ab0ad387acc0e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -673,11 +673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7050557938060687448, guid: b875a7884ff66374eb1ab0ad387acc0e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -4.5107117
+      value: -4.18
       objectReference: {fileID: 0}
     - target: {fileID: 7050557938060687448, guid: b875a7884ff66374eb1ab0ad387acc0e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.0699997
+      value: 3.29
       objectReference: {fileID: 0}
     - target: {fileID: 7050557938060687448, guid: b875a7884ff66374eb1ab0ad387acc0e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
