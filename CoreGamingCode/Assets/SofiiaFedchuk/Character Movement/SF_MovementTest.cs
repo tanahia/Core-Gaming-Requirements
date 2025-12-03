@@ -2,54 +2,73 @@
 
 public class SF_MovementTest : MonoBehaviour
 {
-   public SF_CharacterMovement characterTransform;
 
-    float speedMovement = 100.0f;
-    float rotationSpeed = 1050.0f;
-    float horizontalInput;
-    float verticalInput;
+    /*This script allows you to move the player object through keyboard input(wasd) and rotates the player object towards movement direction.
+     * To make this script work ypu need to attach rigibody component and this script to the player object.
+     * If you see that the player object moves on its own after releasing the key you need to increase linear damping value of the rigibody component.
+     */
+    /*You can change values of speed and Rigidbody in Unity environment. */
+    [SerializeField] float speed;
+    [SerializeField] Rigidbody rb;
+
+    Vector3 movement;//variable to store movement direction
+
 
     void Start()
     {
-        characterTransform = GetComponent<SF_CharacterMovement>();
-
-
-        // characterTransform.SetPosition(new Vector3(0, 15, 0));
-        //characterTransform.SetPosition(new Vector3(-11, 0, -112));
-       // characterTransform.setScale(new Vector3(1, 1, 1));     
+        rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    void Update()
+
+    void FixedUpdate()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        characterTransform.keyboardRotation(horizontalInput, verticalInput, rotationSpeed);
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
 
         if (Input.GetKey(KeyCode.W))
         {
-            //  characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
+            keyboardMovement(x, z, speed);
+            keyboardRotation(x, z, speed);
 
-            characterTransform.moveForward(speedMovement);
 
         }
         else if (Input.GetKey(KeyCode.S))
 
         {
-            //characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
-             characterTransform.moveBackwards(speedMovement);
+            keyboardMovement(x, z, speed);
+            keyboardRotation(x, z, speed);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            // characterTransform.JustMove(horizontalInput, verticalInput, speedMovement);
-            characterTransform.turnRight(rotationSpeed);
-            characterTransform.moveRight(speedMovement);
+            keyboardMovement(x, z, speed);
+            keyboardRotation(x, z, speed);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-           characterTransform.turnLeft(rotationSpeed);
-            characterTransform.moveLeft(speedMovement);
+            keyboardMovement(x, z, speed);
+            keyboardRotation(x, z, speed);
         }
+    }
 
+    /*Method that performs the player object rotation through keyboard*/
+    public void keyboardRotation(float x, float z, float speed)
+    {
+
+        movement = new Vector3(x, 0, z);
+        if (movement.sqrMagnitude > 0.01f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.fixedDeltaTime);
+
+        }
+    }
+    /*Method that performs the player object movement through keyboard*/
+    public void keyboardMovement(float x, float z, float speed)
+    {
+        movement = new Vector3(x, 0, z);
+        rb.AddForce(movement.normalized * speed);
     }
 
 }

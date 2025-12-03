@@ -19,7 +19,7 @@ public class SF_In_GameTimer : MonoBehaviour
     {
         if (timer.GetTimeRemaining() > 0)
         {
-           Set_Text(timer.GetTimeRemaining());
+            Set_Text(timer.GetTimeRemaining());
         }
         else
         {
@@ -28,25 +28,23 @@ public class SF_In_GameTimer : MonoBehaviour
     }
     public void Set_Text(float time_remaining)
     {
-     
-        int minute, second;
-        (minute,second) = getMinSec(time_remaining);
 
-        print(minute + "   :   "+ second);
-        string text= "1:00";
-        int i = 0;
-        
-        //if (m_TextMeshPro == null)
-        //{
-        //    m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
-        //}
-        //while (time_remaining!=0)
-        //{
-        //    text = i+" ";
-        //    i++;
-        //   m_TextMeshPro.text = text;
-        //}
-       
+        int minute, second;
+        string text;
+        (minute, second) = getMinSec(time_remaining);
+
+
+
+        if (m_TextMeshPro == null)
+        {
+            m_TextMeshPro = GetComponent<TMPro.TextMeshPro>();
+        }
+        else
+        {
+            text = minute + " : " + second;
+            m_TextMeshPro.text = text;
+        }
+
     }
 
     private (int minute, int second) getMinSec(float time_remaining)
