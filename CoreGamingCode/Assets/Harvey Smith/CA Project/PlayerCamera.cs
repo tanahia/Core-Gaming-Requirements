@@ -21,6 +21,10 @@ public class TestCameraScript : MonoBehaviour
         mouseX = -Input.GetAxis("Mouse X") * 2f;
         cam.lateralRotate(mouseX);
 
+        mouseY = -Input.GetAxis("Mouse Y") * 2f;
+        cam.verticalRotate(mouseY);
         cam.setScroll(75, 80);
+
+       
     }
 }
