@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SF_PlayerController : MonoBehaviour
 {
+
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;
 
@@ -27,6 +28,8 @@ public class SF_PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             mouseMovement(x, z, speed);
+            keyboardMovement(x, z, speed);
+            keyboardRotation(x, z, speed);
 
 
         }
@@ -68,13 +71,25 @@ public class SF_PlayerController : MonoBehaviour
         {
             Quaternion target = Quaternion.LookRotation(dir, Vector3.up);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, rotationSpeed * Time.fixedDeltaTime);
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                target,
+               rotationSpeed * Time.fixedDeltaTime
+            );
         }
+        /*  Vector3 moveDirection = new Vector3(x, 0, z);
+          if (moveDirection.sqrMagnitude > 0.01f)
+          {
+              Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+              transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.fixedDeltaTime);
+
+          }*/
     }
     public void keyboardMovement(float x, float z, float speed)
     {
 
         movement = transform.right * x + transform.forward * z;
+        // movement=new Vector3(x, 0, z);
         rb.AddForce(movement.normalized * speed);
     }
 }
