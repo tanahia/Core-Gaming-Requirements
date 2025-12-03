@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SF_MenuScript : MonoBehaviour
 {
@@ -6,6 +9,10 @@ public class SF_MenuScript : MonoBehaviour
     public Transform canvasTransform;
     public Sprite playbuttonSprite;
     public Sprite QuitbuttonSprite;
+    public Animator transition1;
+    public Animator transition2;
+    public float transitionTime;
+
 
     ButtonControlScript playButton, quitButton;
     void Start()
@@ -18,7 +25,7 @@ public class SF_MenuScript : MonoBehaviour
       //  playButton.SetColors(Color.white, Color.gray, Color.white, Color.black);
         playButton.SetButtonSize(150, 50);
         playButton.SetButtonImage(playbuttonSprite);
-        playButton.SetButtonAction(action);
+       // playButton.SetButtonAction(action);
 
         newButton = Instantiate(buttonTransformClone, canvasTransform);
         quitButton = newButton.GetComponent<ButtonControlScript>();
@@ -33,10 +40,21 @@ public class SF_MenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            LoadNextLevel();
+        }
     }
-    public void action()
+   
+    public void LoadNextLevel()
     {
-        print("Button Pressed");
+               StartCoroutine(LoadLevel("MiniGame"));
+    }
+    IEnumerator LoadLevel(string name)
+    {
+        transition1.SetTrigger("End");
+        transition2.SetTrigger("ButtonEnd");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(name);
     }
 }
