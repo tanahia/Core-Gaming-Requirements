@@ -29,8 +29,6 @@ public class SF_PlayerController : MonoBehaviour
         {
             mouseMovement(x, z, speed);
             keyboardMovement(x, z, speed);
-           
-
 
         }
         else if (Input.GetKey(KeyCode.S))
