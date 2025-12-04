@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class YB_testfpscam : MonoBehaviour
+public class YB_TestFPSCamera : MonoBehaviour
 {
     float cameraX = 0, cameraY = 0, camLimitX = -60, camLimitY = 65;
 
