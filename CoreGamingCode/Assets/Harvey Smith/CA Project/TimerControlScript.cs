@@ -27,6 +27,7 @@ public class TimerUser : MonoBehaviour
         else
         {
             timerText.text = "DONE!";
+
         }
     }
 }
