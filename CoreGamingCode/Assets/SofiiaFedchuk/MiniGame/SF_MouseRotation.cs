@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class SF_MouseRotation : MonoBehaviour
 {
-    float mouseSensitivity = 200f;
+    public float mouseSensitivity = 200f;
+    public float mouseX;
+    public float mouseY;
     //float xRotation = 0f;
     public Transform player;
 
@@ -16,10 +18,10 @@ public class SF_MouseRotation : MonoBehaviour
     {
         MouseLook();
     }
-    void MouseLook()
+    public void MouseLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
 
         // xRotation -= mouseY;
