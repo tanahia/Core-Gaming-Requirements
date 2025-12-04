@@ -25,6 +25,8 @@ public class GT_CameraControlTPA : MonoBehaviour
 
     float distanceBehind = 7f, distanceUp = 1.5f;
     float minScroll = 3f, maxScroll = 7.5f;
+    float scrollV =0f;
+    float scrollVel = 0.68f;
 
     float theta = 0f, phi = 0f;
 
@@ -44,9 +46,7 @@ public class GT_CameraControlTPA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float scrollV = 0f;
-        
-        float scrollVel = 0.68f;
+       
 
         Vector2 scroll = Input.mouseScrollDelta;
         if (scroll.y > 0)
@@ -80,6 +80,11 @@ public class GT_CameraControlTPA : MonoBehaviour
     public void setScroll(float minZoom, float maxZoom)
     {
         minScroll  = minZoom; maxScroll = maxZoom;
+    }
+
+    public void setScrollSpeed(float scrollSpeed)
+    {
+        scrollVel = scrollSpeed;
     }
     private bool angleNotRight()
     {

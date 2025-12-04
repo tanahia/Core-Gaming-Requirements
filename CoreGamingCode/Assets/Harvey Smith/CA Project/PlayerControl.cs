@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     private physicsMovement movement;
-    float movementSpeed = 20f;
+    float movementSpeed = 30f;
     public Rigidbody rigid;
-    public bool isGrounded = false;
+   
 
     void Start()
     {
@@ -15,10 +15,6 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-
-
-        if (isGrounded == true) { 
-
 
         if (Input.GetKey(KeyCode.W))
             movement.forwardMovement(movementSpeed);
@@ -32,16 +28,8 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             movement.leftMovement(movementSpeed);
     }
-        if (h)
+        
         
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        isGrounded = true;
-    }
+   
 
-    void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-    }
-}
