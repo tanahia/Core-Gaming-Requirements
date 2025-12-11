@@ -32,7 +32,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             movement.leftMovement(movementSpeed);
     }
-       // if (h)
+
         
     }
     void OnCollisionEnter(Collision collision)
