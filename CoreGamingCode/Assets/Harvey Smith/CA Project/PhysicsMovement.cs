@@ -12,8 +12,8 @@ public class physicsMovement : MonoBehaviour
     {
         Vector3 forwardDir = cam.transform.forward;
 
-        forwardDir.y = 0f;        // keep movement on ground
-        forwardDir.Normalize();   // keep force consistent
+        forwardDir.y = 0f;       
+        forwardDir.Normalize();   
 
         rigid.AddForce(forwardDir * speed, ForceMode.Force);
     }

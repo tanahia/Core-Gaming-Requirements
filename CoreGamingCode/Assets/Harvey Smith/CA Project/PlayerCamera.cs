@@ -25,6 +25,8 @@ public class TestCameraScript : MonoBehaviour
         cam.verticalRotate(mouseY);
         cam.setScroll(75, 80);
 
+        cam.setScroll(50, 2000);
+        cam.setScrollSpeed(200);
        
     }
 }
