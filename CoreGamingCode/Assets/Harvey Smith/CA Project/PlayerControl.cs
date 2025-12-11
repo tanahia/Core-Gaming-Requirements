@@ -28,7 +28,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             movement.leftMovement(movementSpeed);
     }
-        
+
         
     }
    
